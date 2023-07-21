@@ -29,7 +29,6 @@ app.use(express.json());
 
 app.use((req, res, next) => {
   const { origin } = req.headers;
-  console.log(req.headers);
   const { method } = req;
   const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
   const requestHeaders = req.headers['access-control-request-headers'];
