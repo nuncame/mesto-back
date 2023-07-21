@@ -4,7 +4,7 @@ const JWT_SECRET = 'super-secret-key';
 
 const createToken = (id) => {
   const token = jwt.sign({ id }, JWT_SECRET, { expiresIn: '7d' });
-  return { token };
+  return token;
 };
 
 const verifyToken = (token) => {
