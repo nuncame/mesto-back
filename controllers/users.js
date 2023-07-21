@@ -48,7 +48,9 @@ const login = (req, res, next) => {
           return next(new UnauthorizedError('Неправильные почта или пароль'));
         }
         const token = createToken(user._id);
-        return res.status(200).send(token);
+        return res.status(200).send({
+          name: user.name, about: user.about, avatar: user.avatar, token,
+        });
       });
       return false;
     })
